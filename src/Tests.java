@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.IOException;
 
 public class Tests {
@@ -6,13 +7,12 @@ public class Tests {
 
         Image originalImage = new Image();
         try {
-            originalImage.setBufferedImage(Transfer.imageToImageObject("image.jpg"));
-            originalImage.getBufferedImage().getHeight();
+            originalImage.setBufferedImage(Transfer.imageToImageObject("Elevation Map.jpg"));
+            double[][] array = Transfer.ImageToDoubleArray(originalImage);
+            IO.exportLines("test.txt", array);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println(originalImage.getPixelColor(0,0));
 
     }
 

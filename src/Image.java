@@ -25,6 +25,8 @@ public class Image {
 
     public void setBufferedImage(BufferedImage bufferedImage) {
         this.bufferedImage = bufferedImage;
+        this.height = bufferedImage.getHeight();
+        this.width = bufferedImage.getWidth();
     }
 
     public int getHeight() {
